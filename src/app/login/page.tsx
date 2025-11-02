@@ -25,7 +25,7 @@ export default function LoginPage() {
     const data = await res.json();
     if (!res.ok) return setError(data.message);
     login(data.token);
-    router.replace(data.role === "admin" ? "/admin" : "/redeem");
+    router.push("/");
   }
 
   return (
