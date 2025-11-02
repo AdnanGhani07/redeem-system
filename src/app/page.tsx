@@ -31,7 +31,7 @@ export default function HomePage() {
           ) : (
             <>
               <p className="text-lg text-gray-700">
-                Redeem your codes or view active offers.
+                Redeem codes to get your rewards.
               </p>
               <div className="flex flex-col space-y-3 mx-auto">
                 <Link href="/redeem">
