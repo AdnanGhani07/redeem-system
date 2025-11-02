@@ -25,7 +25,7 @@ export default function LoginPage() {
     const data = await res.json();
     if (!res.ok) return setError(data.message);
     login(data.token);
-    router.push("/");
+    router.replace("/");
   }
 
   return (
