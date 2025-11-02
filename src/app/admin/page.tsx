@@ -18,15 +18,10 @@ export default function AdminPage() {
     if (loading) return;
     if (!user) router.replace("/login");
     else if (user.role !== "admin") router.replace("/redeem");
-    // eslint-disable-next-line
   }, [user, router, loading]);
 
-  // Add loading state to ensure hydration on refresh
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  useEffect(() => { setLoading(false); }, []);
 
-  // Code list
   const [codes, setCodes] = useState([]);
   const [form, setForm] = useState({
     code: "",
@@ -127,10 +122,27 @@ export default function AdminPage() {
               <tr key={code._id}>
                 <td className="px-4 py-2 whitespace-nowrap">{code.code}</td>
                 <td className="px-4 py-2 whitespace-nowrap capitalize">{code.codeType}</td>
-                <td className="px-4 py-2 whitespace-nowrap">{code.codeType === "common" ? code.redemptionLimit + (code.redemptionLimit === 1 ? " time" : " times") : "One-Time Use"}</td>
-                <td className="px-4 py-2 whitespace-nowrap">{new Date(code.expiryDate).toLocaleDateString()}</td>
+                <td className="px-4 py-2 whitespace-nowrap">
+                  {code.codeType === "common"
+                    ? `${code.redemptionLimit} ${code.redemptionLimit === 1 ? "time" : "times"}`
+                    : "One-Time Use"}
+                </td>
+                <td className="px-4 py-2 whitespace-nowrap">
+                  {new Date(code.expiryDate).toLocaleDateString()}
+                </td>
                 <td className="px-4 py-2 whitespace-nowrap capitalize">{code.status}</td>
-                <td className="px-4 py-2 whitespace-nowrap">{code.redeemedBy?.length ?? 0}</td>
+                <td className="px-4 py-2 whitespace-nowrap">
+                  {code.redeemedBy && code.redeemedBy.length > 0 ? (
+                    <details>
+                      <summary className="cursor-pointer">{code.redeemedBy.length} user(s)</summary>
+                      <ul className="ml-2 text-xs mt-1">
+                        {code.redeemedBy.map((user: any) =>
+                          <li key={user._id || user}>{user.email || user._id || user}</li>
+                        )}
+                      </ul>
+                    </details>
+                  ) : 0}
+                </td>
               </tr>
             ))}
           </tbody>

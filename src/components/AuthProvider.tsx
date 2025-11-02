@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { jwtDecode } from "jwt-decode";
+import { useRouter } from "next/navigation";
 
 type User = { id: string; role: 'admin' | 'user' } | null;
 
@@ -20,7 +21,7 @@ const AuthContext = createContext<{
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
   const [user, setUser] = useState<User>(null);
-
+  const router = useRouter();
   useEffect(() => {
     const t = localStorage.getItem("token");
     setToken(t);
@@ -38,6 +39,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem("token");
     setToken(null);
     setUser(null);
+    router.push("/login");
   };
 
   return (

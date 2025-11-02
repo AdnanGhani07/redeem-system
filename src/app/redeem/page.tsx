@@ -27,8 +27,8 @@ export default function RedeemPage() {
     <div className="max-w-sm mx-auto mt-24 space-y-5">
       <Input placeholder="Enter code" value={code} onChange={e => setCode(e.target.value)} />
       <Button className="w-full" onClick={handleRedeem}>Redeem</Button>
-      {message && <Alert>{message}</Alert>}
-      {error && <Alert variant="destructive">{error}</Alert>}
+      {message && <Alert variant="default" className="w-full bg-green-50 text-green-700 border-green-200 whitespace-nowrap">{message}</Alert>}
+      {error && <Alert variant="destructive" className="w-full bg-red-50 text-red-700 border-red-200 whitespace-nowrap">{error}</Alert>}
     </div>
   );
 }
