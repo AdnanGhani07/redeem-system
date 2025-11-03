@@ -106,5 +106,5 @@ A modern full-stack web application for generating, managing, and redeeming uniq
 
 ## 🤝 Credits
 
-Made by [Adnan Ghani](github.com/adnanghani07)  
+Made by [Adnan Ghani](https://www.github.com/adnanghani07)  
 Powered by Next.js, MongoDB, TypeScript, and ShadCN UI.
