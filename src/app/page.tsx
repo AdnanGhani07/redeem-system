@@ -60,9 +60,30 @@ export default function HomePage() {
               <Button className="px-6 py-2 font-semibold">Login</Button>
             </Link>
             <Link href="/redeem">
-              <Button variant="secondary" className="px-6 py-2">Redeem Code</Button>
+              <Button variant="secondary" className="px-6 py-2 font-semibold">Redeem Code</Button>
             </Link>
           </div>
+          <div className="flex gap-6 justify-center py-5">
+            {[
+              { label: "Admin", email: "admin@example.com", password: "adminpassword", color: "from-blue-600 to-cyan-400" },
+              { label: "User 1", email: "user@demo.com", password: "userpassword", color: "from-pink-500 to-red-400" },
+              { label: "User 2", email: "common@demo.com", password: "commonpassword", color: "from-emerald-500 to-green-400" },
+            ].map(({ label, email, password, color }) => (
+              <div
+                key={email}
+                className={`rounded-xl shadow-md border bg-gradient-to-br ${color} text-black w-56 px-5 py-4 flex flex-col items-start space-y-3 hover:scale-105 transition-transform`}
+              >
+                <div className="font-bold tracking-wide text-lg mb-2">{label}</div>
+                <div className="text-xs font-mono opacity-90">
+                  <span className="font-semibold">Email:</span> <span className="font-bold">{email}</span>
+                </div>
+                <div className="text-xs font-mono opacity-90">
+                  <span className="font-semibold">Password:</span> <span className="font-bold">{password}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </>
       )}
     </div>

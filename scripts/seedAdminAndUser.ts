@@ -18,6 +18,9 @@ const User = require('../src/models/User').default;
   const userHashed = await bcrypt.hash('userpassword', 10);
   await User.create({ email: 'user@demo.com', password: userHashed, role: 'user' });
 
+  const commonHashed = await bcrypt.hash('commonpassword', 10);
+  await User.create({ email: 'common@demo.com', password: commonHashed, role: 'user' });
+
   console.log('Seeded admin and user.');
   process.exit();
 })();
