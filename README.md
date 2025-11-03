@@ -60,9 +60,12 @@ A modern full-stack web application for generating, managing, and redeeming uniq
 - **Admin**
   - Email: `admin@example.com`
   - Password: `adminpassword`
-- **User**
+- **User 1**
   - Email: `user@demo.com`
   - Password: `userpassword`
+- **User 2**
+  - Email: `common@demo.com`
+  - Password: `commonpassword`
 
 *(Seeded with the provided script)*
 
