@@ -104,29 +104,6 @@ A modern full-stack web application for generating, managing, and redeeming uniq
 
 ---
 
-## ✅ Assignment Deliverables & Evaluation Criteria
-
-- Fulfills all required flows: code creation, redemption, expiry, limit, history.
-- Role-based dashboard and route protection.
-- Modern Next.js 16 App Router structure (`src` directory).
-- TypeScript across backend and frontend.
-- Beautiful, accessible UI with ShadCN UI and Tailwind CSS v4.
-- Secure JWT authentication and modular backend.
-- Clean documentation and clear demo/dev instructions.
-
----
-
-## ✨ Bonus Features (optional, if implemented)
-
-- Registration page for users.
-- Logout flow, session awareness.
-- Dark mode toggle.
-- Editable/deletable codes.
-- Unit/integration tests.
-- Admin view for full redemption history.
-
----
-
 ## 🤝 Credits
 
 Made by [Adnan Ghani]  
