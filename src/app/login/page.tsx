@@ -16,12 +16,6 @@ export default function LoginPage() {
   const { user } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    if (user) {
-      router.replace("/");
-    }
-  }, [user, router]);
-
   async function submit() {
     setError("");
     const res = await fetch("/api/auth", {

@@ -36,8 +36,17 @@ export default function AdminPage() {
       fetch("/api/codes", {
         headers: { Authorization: `Bearer ${token}` },
       })
-        .then((res) => res.json())
-        .then(setCodes);
+        .then(async (res) => {
+          if (!res.ok) {
+            setCodes([]);     // fallback on network/server error
+            return;
+          }
+          try {
+            setCodes(await res.json());   // only if JSON parsing succeeds
+          } catch {
+            setCodes([]);     // fallback on JSON parse error (empty response)
+          }
+        });
     }
   }, [token, message, loading]);
 

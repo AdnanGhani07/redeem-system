@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import User from "@/models/User";
 import RedeemCode from "@/models/RedeemCode";
 import { dbConnect } from "@/lib/mongodb";
 import { requireAuth } from "@/middlewares/auth";
+
 
 export async function POST(req: NextRequest) {
   await dbConnect();
@@ -28,6 +30,7 @@ export async function POST(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
   await dbConnect();
+  await import("@/models/User");
   const { searchParams } = req.nextUrl;
   const isActiveQuery = searchParams.get("active") === "true";
 
@@ -46,7 +49,7 @@ export async function GET(req: NextRequest) {
   if (!user) return NextResponse.json({ message: "Admin only" }, { status: 403 });
 
   const codes = await RedeemCode.find()
-    .populate('redeemedBy', 'email'); // << Populate users who redeemed
+    .populate('redeemedBy', 'email');
 
   return NextResponse.json(codes);
 }
