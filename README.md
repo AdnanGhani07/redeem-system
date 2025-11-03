@@ -74,11 +74,11 @@ A modern full-stack web application for generating, managing, and redeeming uniq
 ## 🚦 Usage Guide
 
 - **Landing page**: Overview, demo credentials, entry points.
-- **Login/Register**: Authenticate as admin/user.
+- **Login**: Authenticate as admin/user.
 - **Admin dashboard**:
 - Create codes (common/unique), set limits and expiry.
-- Review redemption history and code statuses.
-- Only admins can access this dashboard.
+  - Review redemption history and code statuses.
+  - Only admins can access this dashboard.
 - **Redeem page**: Users enter codes, get instant feedback.
 - **Authentication & Authorization**: All backend routes are protected by JWT and role.
 
