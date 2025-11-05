@@ -60,9 +60,12 @@ A modern full-stack web application for generating, managing, and redeeming uniq
 - **Admin**
   - Email: `admin@example.com`
   - Password: `adminpassword`
-- **User**
+- **User 1**
   - Email: `user@demo.com`
   - Password: `userpassword`
+- **User 2**
+  - Email: `common@demo.com`
+  - Password: `commonpassword`
 
 *(Seeded with the provided script)*
 
@@ -71,11 +74,11 @@ A modern full-stack web application for generating, managing, and redeeming uniq
 ## 🚦 Usage Guide
 
 - **Landing page**: Overview, demo credentials, entry points.
-- **Login/Register**: Authenticate as admin/user.
+- **Login**: Authenticate as admin/user.
 - **Admin dashboard**:
-- Create codes (common/unique), set limits and expiry.
-- Review redemption history and code statuses.
-- Only admins can access this dashboard.
+  - Create codes (common/unique), set limits and expiry.
+  - Review redemption history and code statuses.
+  - Only admins can access this dashboard.
 - **Redeem page**: Users enter codes, get instant feedback.
 - **Authentication & Authorization**: All backend routes are protected by JWT and role.
 
@@ -101,30 +104,7 @@ A modern full-stack web application for generating, managing, and redeeming uniq
 
 ---
 
-## ✅ Assignment Deliverables & Evaluation Criteria
-
-- Fulfills all required flows: code creation, redemption, expiry, limit, history.
-- Role-based dashboard and route protection.
-- Modern Next.js 16 App Router structure (`src` directory).
-- TypeScript across backend and frontend.
-- Beautiful, accessible UI with ShadCN UI and Tailwind CSS v4.
-- Secure JWT authentication and modular backend.
-- Clean documentation and clear demo/dev instructions.
-
----
-
-## ✨ Bonus Features (optional, if implemented)
-
-- Registration page for users.
-- Logout flow, session awareness.
-- Dark mode toggle.
-- Editable/deletable codes.
-- Unit/integration tests.
-- Admin view for full redemption history.
-
----
-
 ## 🤝 Credits
 
-Made by [Adnan Ghani]  
+Made by [Adnan Ghani](https://www.github.com/adnanghani07)  
 Powered by Next.js, MongoDB, TypeScript, and ShadCN UI.
